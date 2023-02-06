@@ -13,7 +13,7 @@ console.log(`
 
 const server = http.createServer();
 const url = "https://zoro.to";
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.PORT || 3000;
 
 server.on('request', async (req, res) => {
     const asset = await fetch(url + req.url); // Get the asset from the website
@@ -24,7 +24,6 @@ server.on('request', async (req, res) => {
 
 server.on('listening', () => {
   console.log(kuler(`Server has been started! Listening on port ${PORT}`, "#00ff00"));
-  console.log("Link to view: " + kuler(`https://${process.env.REPL_SLUG}.${process.env.REPL_OWNER}.repl.co`, "#0000ff"));
 });
 
 // Here we start the proxy
